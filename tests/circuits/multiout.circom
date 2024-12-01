@@ -4,6 +4,8 @@ template Multiout(N) {
   signal input a[N]; 
   signal input b[N]; 
   var newSize = N + N - 1;
+  // doesn't output signals that only start with the name
+  signal output cOutxx[N];
   signal output cOut[N];
   signal output aOut[newSize];
   signal output bOut[newSize];
@@ -18,6 +20,7 @@ template Multiout(N) {
   }
 
   cOut <== c1;
+  cOutxx <== a;
   aOut <== a1;
   bOut <== b1;
 }

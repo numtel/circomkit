@@ -66,7 +66,7 @@ describe('witness tester', () => {
       a: Array(N).fill(a),
       b: Array(N).fill(b),
     };
-    const output = await circuit2.compute(input, ['aOut', 'bOut', 'cOut']);
+    const output = await circuit2.compute(input, ['aOut', 'bOut', 'cOut', 'cOutxx']);
 
     expect(output).toHaveProperty('aOut');
     expect(output).toHaveProperty('bOut');
@@ -77,6 +77,7 @@ describe('witness tester', () => {
     expect(output.aOut).toEqual(aOut);
     expect(output.bOut).toEqual(bOut);
     expect(output.cOut).toEqual(cOut);
+    expect(output.cOutxx).toEqual(Array(N).fill(BigInt(a)));
 
     await circuit2.expectPass(input, output);
   });
