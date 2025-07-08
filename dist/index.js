@@ -1,0 +1,18 @@
+'use strict';
+
+var index = require('./index-CBLoagGV.js');
+require('snarkjs');
+require('circom_tester');
+require('fs');
+require('fs/promises');
+require('crypto');
+require('loglevel');
+require('https');
+require('node:assert');
+require('node:path');
+require('node:fs');
+require('child_process');
+
+
+
+exports.Circomkit = index.Circomkit;
